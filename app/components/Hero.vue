@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import { heroSectionAnimation } from "~/animations/heroSectionAnimation";
 const titleRef = ref(null);
 const bodyTextRef = ref(null);
 const btnRef = ref(null);
@@ -11,77 +12,18 @@ const card2Ref = ref(null);
 const card3Ref = ref(null);
 const card4Ref = ref(null);
 
+const { animateOnView } = heroSectionAnimation();
+
 onMounted(() => {
-    let tl = gsap.timeline({
-        onComplete: () => {
-            onScrollAnim();
-        },
-    });
-    (tl.from(titleRef.value, {
-        opacity: 0,
-        scale: 0.8,
-        y: 50,
-        duration: 1,
-        ease: "power2.out",
-    }),
-        tl.from(
-            bodyTextRef.value,
-            {
-                opacity: 0,
-                scale: 0.8,
-                y: 50,
-                duration: 1,
-                ease: "power2.out",
-            },
-            "<0.2",
-        ),
-        tl.from(
-            btnRef.value,
-            {
-                opacity: 0,
-                y: 50,
-                scale: 0.6,
-                duration: 1,
-                ease: "power2.out",
-            },
-            "<0.2",
-        ),
-        tl.from(
-            ".dashboard-img",
-            {
-                opacity: 0,
-                scale: 0.8,
-                duration: 1,
-                ease: "back.out(1.7)",
-            },
-            "<0.2",
-        ),
-        tl.from(
-            [card1Ref.value, card2Ref.value, card3Ref.value, card4Ref.value],
-            {
-                scale: 0,
-                opacity: 0,
-                duration: 0.6,
-                ease: "back.out(1.7)", // ✨ Le meilleur bounce
-                stagger: 0.1,
-            },
-            "<0.4",
-        ));
-    function onScrollAnim() {
-        gsap.to(".dashboard-img", {
-            scrollTrigger: {
-                trigger: ".trigger",
-                start: "top top",
-                end: "bottom top",
-                scrub: 1,
-            },
-            scale: 0.4,
-            y: -250,
-            opacity: 0.2,
-            force3D: true,
-            ease: "none",
-        });
-    }
+    const animateHero = animateOnView(
+        titleRef,
+        bodyTextRef,
+        btnRef,
+        card1Ref,
+        card2Ref,
+        card3Ref,
+        card4Ref,
+    );
 });
 </script>
 

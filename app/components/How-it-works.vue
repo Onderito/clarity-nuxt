@@ -38,7 +38,7 @@ const cards = ref([
 </script>
 
 <template>
-    <div class="container">
+    <div>
         <h2 ref="titleRef" class="heading-2 font-inter text-center">
             How It Works
         </h2>
@@ -46,12 +46,12 @@ const cards = ref([
             A simple flow to stay productive without pressure
         </p>
 
-        <div class="min-h-screen mt-6 xl:mt-8 pb-12">
+        <div class="mt-8">
             <div class="mx-auto px-5 xl:flex xl:gap-10">
                 <div
                     v-for="(card, i) in cards"
                     :key="i"
-                    class="w-full mb-12 last:mb-0"
+                    class="w-full mb-8 last:mb-0"
                 >
                     <div
                         class="card w-full h-[300px] rounded-xl bg-white border-[0.5px] border-[#E2E6EC] flex flex-col justify-center items-center relative overflow-hidden p-8"

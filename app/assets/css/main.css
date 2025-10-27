@@ -2,21 +2,21 @@
 
 @font-face {
     font-family: "Inter";
-    src: url("../public/assets/fonts/Inter_18pt-Regular.ttf");
+    src: url("/fonts/Inter_18pt-Regular.ttf");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Inter";
-    src: url("../public/assets/fonts/Inter_18pt-Bold.ttf");
+    src: url("/fonts/Inter_18pt-Bold.ttf");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Gloria Hallelujah";
-    src: url("../public/fonts/GloriaHallelujah-Regular.ttf");
+    src: url("/fonts/GloriaHallelujah-Regular.ttf");
     font-weight: 400;
     font-style: normal;
 }
@@ -63,6 +63,19 @@
             inset 0px 3px 2px 0px rgba(173, 173, 173, 0.25),
             inset 0px -3px 2px 0px rgba(173, 173, 173, 0.25),
             0px 1px 4px 0px rgba(255, 255, 255, 0.25);
+    }
+    .purple-glow {
+        box-shadow: 0 0 0 2px #c9cafe;
+    }
+    .inner-white {
+        box-shadow:
+            inset 0px 4px 4px 0px rgba(255, 255, 255, 0.25),
+            inset 0px -4px 4px 0px rgba(255, 255, 255, 0.25);
+    }
+    .progress-bar-shadow {
+        box-shadow:
+            inset 5px 8px 4px 0px rgba(255, 255, 255, 0.25),
+            inset 5px -8px 4px 0px rgba(255, 255, 255, 0.25);
     }
 }
 @theme inline {

@@ -12,4 +12,7 @@
     <div class="container">
         <HowItWorks />
     </div>
+    <div class="container">
+        <Features />
+    </div>
 </template>
